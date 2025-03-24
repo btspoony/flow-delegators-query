@@ -1,0 +1,126 @@
+{
+  "data": {
+    "delegation_rewards": [
+      {
+        "address": "0x30c2a86699651f7a",
+        "amount": 62.5670939
+      },
+      {
+        "address": "0x14c7cf8a04258d91",
+        "amount": 60.35314407
+      },
+      {
+        "address": "0xeea181a4e6374aed",
+        "amount": 60.23178033
+      },
+      {
+        "address": "0xea098869329a22f9",
+        "amount": 60.02273361
+      },
+      {
+        "address": "0x78dcd7527a238dae",
+        "amount": 59.82969002
+      },
+      {
+        "address": "0x55ad22f01ef568a1",
+        "amount": 59.53176171
+      },
+      {
+        "address": "0xa4c36c61ee34a497",
+        "amount": 59.2091273
+      },
+      {
+        "address": "0x240a34e7f4a394e5",
+        "amount": 58.84922768
+      },
+      {
+        "address": "0xa4394a36288975a9",
+        "amount": 58.67104639
+      },
+      {
+        "address": "0xedc988fa6f5fa1c8",
+        "amount": 57.36754783
+      },
+      {
+        "address": "0x5acd0500c9d33790",
+        "amount": 57.18437946
+      },
+      {
+        "address": "0x3b3043f740f2e552",
+        "amount": 57.16660046
+      },
+      {
+        "address": "0xaca0614d8ec64766",
+        "amount": 57.16318189
+      },
+      {
+        "address": "0xdc3c4f2ddb4674a2",
+        "amount": 56.79217604
+      },
+      {
+        "address": "0x77a641034d4d4866",
+        "amount": 56.59022879
+      },
+      {
+        "address": "0x63d92e2c75bf3298",
+        "amount": 56.29474124
+      },
+      {
+        "address": "0xfc60c82b1dbd6bb3",
+        "amount": 56.22789927
+      },
+      {
+        "address": "0x160c299e06b2bcd1",
+        "amount": 56.11605758
+      },
+      {
+        "address": "0x3b3043f740f2e552",
+        "amount": 55.91412409
+      },
+      {
+        "address": "0x5ceb922ce9d33d95",
+        "amount": 54.98129754
+      },
+      {
+        "address": "0x9765e6dc886331b2",
+        "amount": 54.79691888
+      },
+      {
+        "address": "0x6002cf136e357177",
+        "amount": 53.72252945
+      },
+      {
+        "address": "0x74da574a37db4813",
+        "amount": 53.67345503
+      },
+      {
+        "address": "0x0e89215daf60b3d2",
+        "amount": 53.05400834
+      },
+      {
+        "address": "0x898d757d98cdf014",
+        "amount": 53.04972722
+      },
+      {
+        "address": "0x298e8a95578bac52",
+        "amount": 52.44771616
+      },
+      {
+        "address": "0x160c299e06b2bcd1",
+        "amount": 50.83713
+      },
+      {
+        "address": "0xbab6cbd435659501",
+        "amount": 50.6361103
+      },
+      {
+        "address": "0x838eb6218f194c5f",
+        "amount": 50.48962381
+      },
+      {
+        "address": "0x55ad22f01ef568a1",
+        "amount": 50.4212011
+      }
+    ]
+  }
+}
