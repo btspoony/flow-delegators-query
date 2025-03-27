@@ -31,3 +31,8 @@ export interface COAInfo {
     address: string;
     coa: string;
 }
+
+export interface DelegatorInfo {
+    address: string;
+    amount: number;
+}
