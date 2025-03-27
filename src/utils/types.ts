@@ -27,3 +27,7 @@ export interface IFlowSigner {
     buildAuthorization(accountIndex?: number, privateKey?: string): Authz;
 }
 
+export interface COAInfo {
+    address: string;
+    coa: string;
+}
