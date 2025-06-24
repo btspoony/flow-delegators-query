@@ -4,33 +4,51 @@ import { getFlowAddressCOAs } from './utils/scripts';
 import type { COAInfo } from './utils/types';
 
 const BATCH_SIZE = 1000;
-const INPUT_FILE = path.join(__dirname, '../inputs/delegators.json');
+const INPUT_FILE = path.join(__dirname, "../inputs/delegators.jsonl");
 const OUTPUT_FILE = path.join(__dirname, '../outputs/delegators_coa.json');
+
+type Delegator = {
+    nodeid: string;
+    delegatorid: string;
+    address: string;
+    block_height: number;
+    transaction_id: string;
+};
 
 async function processDelegators() {
     try {
         // Read input file
-        const delegatorsData = JSON.parse(fs.readFileSync(INPUT_FILE, 'utf-8')) as string[];
+        const delegatorStrings = fs.readFileSync(INPUT_FILE, "utf-8").split("\n");
+        const delegatorAddrs = delegatorStrings.map((str) => {
+            try {
+                return (JSON.parse(str) as Delegator).address;
+            } catch (error) {
+                console.error(`Error parsing delegator: ${str}`, error);
+                return null;
+            }
+        });
 
         // Get unique addresses
-        const uniqueAddresses = [...new Set(delegatorsData)];
+        const uniqueAddresses = [...new Set(delegatorAddrs)];
         console.log(`Total unique addresses: ${uniqueAddresses.length}`);
 
         // Process addresses in batches
         const allCOAInfo: COAInfo[] = [];
         for (let i = 0; i < uniqueAddresses.length; i += BATCH_SIZE) {
             const batch = uniqueAddresses.slice(i, i + BATCH_SIZE);
-            console.log(`Processing batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(uniqueAddresses.length / BATCH_SIZE)}`);
+            console.log(
+                `Processing batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(uniqueAddresses.length / BATCH_SIZE)}`,
+            );
 
-            const batchCOAInfo = await getFlowAddressCOAs(batch);
+            const batchCOAInfo = await getFlowAddressCOAs(batch.filter((addr) => addr !== null));
             allCOAInfo.push(...batchCOAInfo);
 
             // Add a small delay between batches to avoid rate limiting
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            await new Promise((resolve) => setTimeout(resolve, 1000));
         }
 
         if (allCOAInfo.length === 0) {
-            console.log('No COA information found');
+            console.log("No COA information found");
             return;
         }
 
